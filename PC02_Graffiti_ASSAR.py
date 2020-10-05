@@ -5,7 +5,9 @@
 Turtle starter code
 ATLS 1300
 Author: Dr. Z
-Author: YOUR NAME
+
+Title: PCO2
+Author: Rishi Assar
 May 29, 2020
 '''
 
@@ -27,26 +29,34 @@ panel.bgpic(image)
 
 #=======Add your code here======
 
+#Variables
+angle1=80
+angle2=100
+sideS=150  #short side of parallelogram
+sideL=230  #long side of parallelogram
+
+clearscreen()#resets screen
+
 Turtle() # creating a turtle to draw!
 up() #picks up pen (stop drawing)
 goto(-125,-350) # goes to x,y coordinate
 down() #drops pen (start drawing)
 color("red")
 write("amazon", font=("Arial", 70, "normal"))
+
+#draw red parallelogram around Bezos' face
 up()
 width(3)
-goto(0,0)
+goto(-70,0)
 down()
-forward(80)
-left(100)
-forward(230)
-left(80)
-forward(150)
-left(100)
-forward(230)
-left(80)
-forward(75)
-home()
+
+for i in range(2):
+  forward(sideS)
+  left(angle2)
+  forward(sideL)
+  left(angle1)
+
+#draw green laser coming out of Bezos' index finger
 up()
 goto(105,-85)
 down()
@@ -55,6 +65,8 @@ width(10)
 right(15)
 forward(400)
 up()
+
+#draw purple scalene triangle with orange outline
 goto(10,-75)
 down()
 color("orange")
@@ -69,10 +81,12 @@ left(130)
 forward(62)
 end_fill()
 up()
+
+#draw a blue dot over Bezos' right eye
 goto(-15,112)
 down()
 color("blue")
 dot(10)
 up()
 
-home()
+exitonclick()
